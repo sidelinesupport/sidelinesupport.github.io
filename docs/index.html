@@ -5,9 +5,185 @@
     <title>Sideliners</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css">
+    <script src="https://kit.fontawesome.com/6b7392096d.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <h1>Sideliners</hi>
-    <p>Under Construction! The description will be added later.</>
-  </body>
+  </head>
+  <body class="container bg-dark">
+        <header class="bg-secondary my-4 rounded rounded-lg">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <a class="navbar-brand" href="#">SidelineSupport <span class="badge badge-warning">alpha</span></a>       
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img src="imgs/sideliners-bg-dark.svg" alt="">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="nav navbar-nav" role="tablist">
+                        <li class="nav-item active"><a class="nav-link" onclick="$('.collapse').collapse('hide')" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="far fa-play-circle"></i> Start<span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="$('.collapse').collapse('hide')" id="aboutus-tab" data-toggle="tab" href="#aboutus" role="tab" aria-controls="aboutus" aria-selected="false"><i class="fas fa-info-circle"></i> Beschreibung</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="$('.collapse').collapse('hide')" id="coc-tab" data-toggle="tab" href="#coc" role="tab" aria-controls="coc" aria-selected="false"><i class="far fa-handshake"></i> Verhaltensregeln</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="$('.collapse').collapse('hide')" id="tos-tab" data-toggle="tab" href="#tos" role="tab" aria-controls="tos" aria-selected="false"><i class="fas fa-certificate"></i> Nutzungsbedingungen</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="$('.collapse').collapse('hide')" id="privacy-tab" data-toggle="tab" href="#privacy" role="tab" aria-controls="privacy" aria-selected="false"><i class="fas fa-user-secret"></i> Datenschutz</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="$('.collapse').collapse('hide')" id="tos-tab" data-toggle="tab" href="#imprint" role="tab" aria-controls="imprint" aria-selected="false"><i class="fas fa-stamp"></i> Impressum</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container tab-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                    <form class="col-md-6 my-2 rounded rounded-lg">
+                        <h2 class="text-light"><i class="far fa-play-circle"></i> Start</h2>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4 text-right text-light">
+                                    <label for="teamAInput">Team A</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="teamAInput" placeholder="Heim">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4 text-right text-light">
+                                    <label for="teamBInput">Team B</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="teamBInput" placeholder="Auswärts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4 text-right text-light">
+                                    <label for="periodsInput">Spielzeiten</label>
+                                </div>
+                                <div class="col-8">
+                                    <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons" id="periodsInput">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="periodsInput4" checked> 4
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="periodsInput5"> 5
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="periodsInput8"> 8
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4 text-right text-light">
+                                    <label for="tipoffInput">Beginn</label>
+                                </div>
+                                <div class="col-8">
+                                    <div class="row" id="tipoffInput">
+                                        <div class="col-4">
+                                            <input type="number" class="form-control" id="tipoffInputHour" maxlength="2">
+                                        </div>
+                                        <div>:</div>
+                                        <div class="col-4">
+                                            <input type="number" class="form-control" id="tipoffInputMin" maxlength="2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary float-right my-3">Ticker erstellen und Link erhalten</button>
+                    </form>
+                    <figure class="col overflow-hidden text-center">
+                        <div class="iphone-x">
+                            <table class="col">
+                                <tr><td colspan="3" class="pt-3 text-muted">Datum, Uhrzeit</td></tr>
+                                <tr>
+                                    <td class="text-right"><small class="badge badge-light">Heim</small></td>
+                                    <td class="text-center" rowspan="2"><i class="fas fa-basketball-ball fa-2x" style="color: #FF9800;"></i></td>
+                                    <td class="text-left"><small class="badge badge-light">Auswärts</small></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right font-weight-bold">Team A</td>
+                                    <td class="text-left font-weight-bold">Team B</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right display-4">0</td>
+                                    <td class="align-middle">
+                                        <small class="badge badge-light">1./4</small><br>
+                                        <span class="badge badge-secondary">00:00</span>
+                                    </td>
+                                    <td class="text-left display-4">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="tab-pane fade text-light" id="aboutus" role="tabpanel" aria-labelledby="aboutus-tab">
+                <h2><i class="fas fa-info-circle"></i> Beschreibung</h2>
+                <p>SidelineSupport ist eine Anwendung, mit der Zuschauer sich austauschen und zusammenarbeiten können. Es konzentriert sich aktuell auf die Bereitstellung von Live-Ticker-Information über Basketball-Spiele, wobei mindestens ein Zuschauer vor Ort die Informationen eingibt, welche beliebig viele Zuschauer über das Internet verfolgen können.</p>
+                <p>Sie können Spiele-Ticker kostenlos erstellen und per Link-Weitergabe bspw. in Chats mit anderen teilen. Die Verwendung ist anonym und erfordert weder vom Zuschauer vor Ort noch von allen anderen eine Anmeldung bzw. ein Benutzerkonto.</p>
+                <p>Die Idee des Live-Tickers ist aufgrund der aktuellen Einschränkungen, welche keine oder nur wenige Zuschauer vor Ort zulassen, umgesetzt worden.</p>
+                <p>Es ist ein Werkzeug, weiterhin an den Spielen der Kinder und Freunde teilhaben zu können.</p>
+            </div>
+            <div class="tab-pane fade text-light" id="coc" role="tabpanel" aria-labelledby="coc-tab">
+                <h2><i class="far fa-handshake"></i> Verhaltensregeln / Code of Conduct</h2>
+                <p>Es wird von den Nutzern des Services erwartet, dass sie höflich und respektvoll gegenüber den Meinungen anderer sind und keine unerwünschten, aggressiven, suggestiven oder anderweitig unangemessenen Bemerkungen an andere Nutzer senden.</p>
+                <p>Sie dürfen den Service nicht für böswillige Zwecke oder zum Missbrauch, zur Belästigung, Bedrohung, Einschüchterung oder zum Identitätswechsel eines anderen Nutzers verwenden. Sie dürfen keine persönlichen oder identifizierenden Informationen von einem anderen Nutzer ohne dessen Einwilligung verwenden.</p>                    
+                <p>Sie dürfen den Service nicht nutzen, um Hass, Gewalt, Diskriminierung oder Intoleranz zu fördern, sich darauf einzulassen oder anzuregen, auch nicht aufgrund von Rasse, Alter, Geschlecht, Geschlechtsidentität, ethnischer Zugehörigkeit, Religion, Behinderung oder sexueller Orientierung.</p>
+                <p>Inhalte, die als anstößig, rechtswidrig oder auf andere Weise als Verstoß gegen die Service-Bedingungen betrachtet werden, werden ohne Diskussion entfernt. Dies schließt insbesondere Inhalte, die weiße nationalistische Ideologie ausdrücklich loben, unterstützen, fördern oder vertreten, ein. Wenn Sie die Bedingungen nicht einhalten, erhalten die ein Hausverbot und haben rechtliche Folgen zu erwarten.</p>
+                <br>
+                <p>Grundsätzlich: seid lieb zueinander!</p>
+            </div>
+            <div class="tab-pane fade text-light" id="tos" role="tabpanel" aria-labelledby="tos-tab">
+                <h2><i class="fas fa-certificate"></i> Nutzungsbedingungen / Terms of Service</h2>
+                <h3>Verwendung</h3>
+                <p>Sie dürfen den Service nur in Übereinstimmung mit diesen Bedingungen nutzen. Alle Rechte, die Ihnen in diesen Bedingungen nicht ausdrücklich gewährt werden, bleiben uns vorbehalten.</p>
+                <h3>Verantwortung</h3>
+                <p>Sie sind für alle Aktivitäten verantwortlich, die sich aus Ihrer Nutzung des Dienstes ergeben. Wir lehnen jegliche Haftung (einschließlich Fahrlässigkeit) für den Inhalt, die Meinungen, Aussagen oder andere Informationen ab, die von seinen Nutzern auf dem Service veröffentlicht oder genutzt werden.</p>
+                <h3>Mindestalter</h3>
+                <p>Derzeit gibt es keine Altersbeschränkung.</p>
+                <h3>Verhaltensregeln</h3>
+                <p>Sie müssen höflich und respektvoll gegenüber den Meinungen anderer sein und dürfen keine unerwünschten, aggressiven, suggestiven oder anderweitig unangemessenen Bemerkungen an ein anderes Mitglied des Dienstes senden.</p>
+                <p>Sie dürfen den Service nicht nutzen, um Hass, Gewalt, Diskriminierung oder Intoleranz zu fördern, sich darauf einzulassen oder anzuregen, auch nicht aufgrund von Rasse, Alter, Geschlecht, Geschlechtsidentität, ethnischer Zugehörigkeit, Religion, Behinderung oder sexueller Orientierung.</p>
+                <h3>Keine böswillige Verwendung</h3>
+                <p>Sie dürfen den Service nicht für böswillige Zwecke nutzen oder andere Benutzer des Service missbrauchen, belästigen, bedrohen, einschüchtern oder als solche ausgeben. Sie dürfen keine persönlichen oder identifizierenden Informationen von einem anderen Mitglied des Dienstes anfordern oder versuchen, diese anzufordern.</p>
+                <h3>Keine illegale Verwendung</h3>
+                <p>Sie dürfen den Service nicht für rechtswidrige Zwecke nutzen oder Informationen veröffentlichen, die gegen eine Vertraulichkeitsverpflichtung, ein Urheberrecht, eine Marke oder anderes geistiges Eigentum oder Eigentumsrechte einer Person verstoßen.</p>
+                <h3>Entfernen von Inhalten</h3>
+                <p>Wir behalten uns das Recht vor, auf dem Service veröffentlichte Inhalte zu entfernen, die wir (nach unserem Ermessen) als anstößig, anstößig, rechtswidrig oder anderweitig als Verstoß gegen diese Bedingungen betrachten.</p>
+                <h3>Gebühren</h3>
+                <p>Der Service ist kostenlos.</p>
+                <h3>Entschädigung</h3>
+                <p>Sie stellen uns von allen Formen der Haftung, Handlungen, Verfahren, Forderungen, Kosten, Gebühren und Aufwendungen frei, die uns in irgendeiner Weise durch die Nutzung des Dienstes durch Sie entstehen oder unterliegen oder darunter leiden.</p>
+                <h3>Änderungen</h3>
+                <p>Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Es können auch neue Funktionen hinzugefügt werden, die diesen Bedingungen unterliegen. Wenn diese Änderungen wesentlich sind, werden wir die Änderungen den Benutzern mitteilen. Wenn Sie den Service weiterhin nutzen, wird davon ausgegangen, dass Sie den Änderungen zugestimmt haben.</p>
+                <h3>Verwendung unseres Logos</h3>
+                <p>Vorbehaltlich dieser Bedingungen gewähren wir Ihnen eine nicht exklusive beschränkte Lizenz zur Nutzung unseres Logos, wenn Sie auf den Service verlinken. Sie müssen alle Anweisungen befolgen, die wir Ihnen von Zeit zu Zeit bezüglich Ihrer Verwendung unseres Logos geben. Sie dürfen unser Logo in keiner Weise verändern. Verwenden Sie unser Logo so, dass jede Art von Vereinigung oder Partnerschaft mit uns nahegelegt wird. Verwenden Sie unser Logo auf eine Weise, die schädlich, irreführend, obszön oder auf andere Weise für die durchschnittliche Person unangenehm ist. oder verwenden Sie unser Logo für oder in Verbindung mit Inhalten, die uns herabsetzen oder unseren Ruf schädigen.</p>
+            </div>
+            <div class="tab-pane fade text-light" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
+                <h2><i class="fas fa-user-secret"></i> Datenschutz</h2>
+                <p>SidelineSupport verpflichtet sich, den Schutz Ihrer Daten zu gewährleisten.</p>
+                <p>Derzeit werden keine persönlichen Daten erhoben - auch keine Websitestatistiken.</p>
+                <h3>Änderungen der Datenschutzerklärung</h3>
+                <p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit mit Mitteilung an Sie ändern oder aktualisieren.</p>
+                <h3>Cookies</h3>
+                <p>Cookies werden nicht verwendet.</p>
+                <h3>Logdaten</h3>
+                <p>Es werden keine Logdaten erhoben.</p>
+            </div>
+            <div class="tab-pane fade text-light" id="imprint" role="tabpanel" aria-labelledby="imprint-tab">
+                <h2><i class="fas fa-stamp"></i> Impressum</h2>
+                <p>Eine Impressumspflicht, die über § 5 Abs. 1 des Telemediengesetzes (TMG) geregelt ist, gilt <u>nicht</u> für private Projekte wie dieser Service. Das Gesetz schreibt vor, dass jede geschäftsmäßige Webseite über ein Impressum mit einer ladungsfähigen Postadresse und Kontaktdaten des Betreibers verfügen muss. Hier würden demzufolge eine Privatadresse und private Kontaktdaten veröffentlicht werden - wir haben uns zum Schutz der eigenen Privatsphäre dagegen entschieden.</p>
+                <p>Diese Webseite enthält keine Werbung, Produktbeschreibungen und präsentiert keine journalistischen und redaktionellen Inhalte.</p>
+                <p>Zur Kontaktaufnahme nutzen Sie bitte endweder die Mailadresse <a class="text-info" href="mailto:sideliners030@gmail.com"><i class="far fa-envelope"></i> sideliners030@gmail.com</a> oder schreiben auf Twitter an <a class="text-info" href="https://twitter.com/sideliners030"><i class="fab fa-twitter"></i> @sideliners030</a></p>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
 </html>
